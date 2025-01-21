@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int a, i;
+
+    printf("Enter the number of elements to be put: ");
+    scanf("%d", &a);
+
+    int N[a];
+
+    for (i = 0; i < a; i++) {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &N[i]);
+    }
+
+    int target;
+    printf("Enter the element needed to find: "); // Changed prompt to match image
+    scanf("%d", &target);
+
+    int found = 0;
+    int index = -1;
+
+    for (i = 0; i < a; i++) {
+        if (N[i] == target) {
+            found = 1;
+            index = i;
+            printf("Element found at index %d\n", i); // Print inside the loop
+            break; // Exit the loop once the element is found
+        }
+    }
+
+    if (!found) { // Use !found for clarity
+        printf("Element 404\n"); // Changed message to match image
+    }
+
+    return 0;
+}
